@@ -1,8 +1,8 @@
 name: API Test Otv
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
+  # schedule:
+    # - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -18,3 +18,5 @@ jobs:
       - name: Run API tests
         run: |
           postman collection run "25721243-0f46eed3-44f4-4159-ab89-64eecc0208e8" -e "25721243-2cbd3513-2b5f-4b9a-8ba7-1e4489047cde"
+      - name: Notify
+        run: |
