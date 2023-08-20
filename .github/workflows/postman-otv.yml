@@ -3,6 +3,7 @@ name: API Test Otv
 on:
   schedule:
     - cron: '*/5 * * * *'
+  workflow_dispatch:
 
 jobs:
   automated-api-tests:
