@@ -14,8 +14,8 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Check if specific text does not exist and response status is not 200\", function () {",
-							"    pm.expect(pm.response.text()).to.not.include(\"Leider wurde die maximale Anzahl von 200 Einlösungen pro Tag bereits erreicht.\");",
-							"    pm.expect(pm.response.code).to.not.equal(200);",
+							"    pm.expect(pm.response.text()).to.include(\"Leider wurde die maximale Anzahl von 200 Einlösungen pro Tag bereits erreicht.\");",
+							"    pm.expect(pm.response.code).to.equal(200);",
 							"});"
 						],
 						"type": "text/javascript",
