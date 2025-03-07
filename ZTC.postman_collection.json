@@ -8,9 +8,40 @@
 	"item": [
 		{
 			"name": "CheckyToilChecky",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check if specific text exists and response status is 200\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Leider wurde die maximale Anzahl von 200 Einlösungen pro Tag bereits erreicht.\");",
+							"    pm.expect(pm.response.code).to.equal(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://www.zewa.net/de/gewinnspiele/gratis-testen/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"zewa",
+						"net"
+					],
+					"path": [
+						"de",
+						"gewinnspiele",
+						"gratis-testen",
+						""
+					]
+				}
 			},
 			"response": []
 		}
