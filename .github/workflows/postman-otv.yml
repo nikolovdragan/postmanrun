@@ -15,6 +15,7 @@ jobs:
           collection: ZTC.postman_collection.json
           envVar: '[{ "key": "slackUrl", "value": "${{ secrets.SLACK_URL }}" }]'
       - name: Test
+        if: ${{ failure() }}
         run: |
           curl -X POST -H 'Content-type: application/json' --data '{"text":"TEST ZTC IS LIVE go to https://www.zewa.net/de/gewinnspiele/gratis-testen/"}' https://hooks.slack.com/services/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
       - name: Notify
