@@ -14,12 +14,8 @@ jobs:
         with:
           collection: ZTC.postman_collection.json
           envVar: '[{ "key": "slackUrl", "value": "${{ secrets.SLACK_URL }}" }]'
-      - name: Test
-        if: ${{ failure() }}
-        run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"TEST ZTC IS LIVE go to https://www.zewa.net/de/gewinnspiele/gratis-testen/"}' ${{ secrets.SLACK_URL }}
       - name: Notify
         if: ${{ success() }}
         run: |
           curl --location 'https://trigger.esp8266-server.de/api/?id=2859&hash=c0abcd10598f95c63b08571cb9b54a15'
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"ZTC IS LIVE go to https://www.zewa.net/de/gewinnspiele/gratis-testen/"}' https://hooks.slack.com/services/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
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"TEST ZTC IS LIVE go to https://www.zewa.net/de/gewinnspiele/gratis-testen/"}' ${{ secrets.SLACK_URL }}
